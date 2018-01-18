@@ -23,7 +23,7 @@ public class RadioButton extends AbstractBaseElement {
 
     private void setChecked(boolean state) {
         if (wrappedElement.isSelected() != state) {
-            WebElement label = wrappedElement.findElement(new By.ByXPath(LABEL_FOR_LOCATOR));
+            WebElement label = this.findElement(new By.ByXPath(LABEL_FOR_LOCATOR));
             label.click();
 
         }

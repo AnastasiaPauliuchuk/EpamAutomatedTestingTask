@@ -36,7 +36,7 @@ public class SelectWithAutocomplete extends AbstractBaseElement {
     public String selectByIndex(int index) {
 
         wrappedElement.click();
-        WebElement el = wrappedElement.findElement(getOptionLocator(index));
+        WebElement el = this.findElement(getOptionLocator(index));
         String value = el.getText();
         el.click();
         info(String.format("select <%s>", value));
@@ -47,7 +47,7 @@ public class SelectWithAutocomplete extends AbstractBaseElement {
     public String searchAndSelect(String placeName) {
         wrappedElement.clear();
         wrappedElement.sendKeys(placeName);
-        WebElement el = wrappedElement.findElement(getOptionLocator(placeName));
+        WebElement el = this.findElement(getOptionLocator(placeName));
         String value = el.getAttribute("innerHTML");
         el.click();
         info(String.format("select <%s>", value));

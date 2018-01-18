@@ -12,7 +12,7 @@ import org.openqa.selenium.support.FindBy;
 public class YouTubeVideoPage extends BasePage {
 
 
-    private final static String MARKER_LOCATOR = "//video[contains(@class,\"video-stream\")]";
+    private final static String MARKER_LOCATOR = "//div[@id=\"info\"]";
 
     @FindBy(css = "h1[class~=\"title\"]")
     private Label lblTitle;

@@ -45,15 +45,15 @@ public class HandLuggageInfoPage extends BasePage {
     }
 
     public void goVideoLink() {
-        this.scrollToElement(videoElement);
+
         iframeElement = videoElement.findElement(new By.ByXPath(IFRAME_LOCATOR));
         WebDriver driver = Browser.getInstance().getDriver();
         driver.switchTo().frame(iframeElement);
         WebElement linkElement = Browser.getInstance().getDriver().findElement(By.xpath(IFRAME_HEAD_LOCATOR));
         linkElement.click();
-        driver.switchTo().parentFrame();
         ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(newTab.get(1));
+        waitReload(2000);
     }
 
     public void assertVideoLink(String expectedLink) {

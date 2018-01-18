@@ -2,7 +2,7 @@
 <!--<?xml version="1.0" encoding="UTF-8"?>-->
 <suite name="Test Plan" verbose="1">
 
-    <!--<test name="Form filling test" preserve-order="true">
+    <test name="Form filling test" preserve-order="true">
         <classes>
             <class name="tests.SearchFormFillTest"/>
 
@@ -39,7 +39,7 @@
             <class name="tests.VerifyBookedFlightPrice"/>
 
         </classes>
-    </test>-->
+    </test>
 
     <test name="Combination of flights" preserve-order="true">
         <parameter name="outboundDeparture" value="Bologna"/>
@@ -66,6 +66,7 @@
 
         </classes>
     </test>
+
     <test name="Search flight destinations under budget" preserve-order="true">
         <parameter name="departurePlace" value="Austria"/>
         <parameter name="budget" value="200"/>

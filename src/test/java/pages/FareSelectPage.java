@@ -28,7 +28,8 @@ public class FareSelectPage extends BasePage {
     private final static String PRICE_PERSON_LOCATOR_TEMPLATE = "(//td[@class=\"td-content\"]//span[contains(@class,\"price\")])[%d]";
     private final static String PRICE_TOTAL_LOCATOR = "//section[@class=\"price-section\"]//div[@class=\"back\"]";
 
-    private final static String OPTION_BUTTON_TEMPLATE_LOCATOR = " //th[@data-product-class=\"%s\"]";
+    private final static String OPTION_BUTTON_TEMPLATE_LOCATOR = "//div[@data-button-container]//button[@value=\"%s\" and contains(@class,\"button--selection\")]";
+    //div[@data-button-container]//button[@value="B" and contains(@class,"button--selection")];// " //th[@data-product-class=\"%s\"]";
 
 
     private final static String OPTION_BUTTON_SELECTED_LOCATOR = "following-sibling::button[contains(@class,\"button-call-to-action\")]";
@@ -52,16 +53,16 @@ public class FareSelectPage extends BasePage {
 
     private void selectOption(String option) {
 
+
         Button btnSelect = new Button(findElement(new By.ByXPath(String.format(OPTION_BUTTON_TEMPLATE_LOCATOR, option))));
+        this.scrollToElement(btnSelect.getWrappedElement());
         btnSelect.click();
-        waitSelected();
+        Button btnSelected = new Button(btnSelect.findElement(new By.ByXPath(OPTION_BUTTON_SELECTED_LOCATOR)));
+        btnSelected.isElementVisible();
 
     }
 
-    public void waitSelected() {
-        isElementVisible(new By.ByXPath(OPTION_BUTTON_SELECTED_LOCATOR));
 
-    }
 
     @Override
     public By getMarkerLocator() {

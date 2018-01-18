@@ -21,7 +21,7 @@ public class ServiceAdditionalMenu extends TopAdditionalMenu {
     }
 
     public void goHandLuggage() {
-        Link linkHandLuggage = new Link(wrappedElement.findElement(new By.ByXPath(HAND_LUGGAGE_LOCATOR)));
+        Link linkHandLuggage = new Link(this.findElement(new By.ByXPath(HAND_LUGGAGE_LOCATOR)));
         linkHandLuggage.click();
     }
 

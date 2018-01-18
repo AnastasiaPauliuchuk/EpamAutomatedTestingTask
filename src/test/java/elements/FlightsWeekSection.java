@@ -30,7 +30,7 @@ public class FlightsWeekSection extends AbstractBaseElement {
             selectDayByIndex(0);
         }
         By by = new By.ByXPath(BUTTON_SELECT_LOCATOR);
-        btnSelect = new Button(wrappedElement.findElement(by));
+        btnSelect = new Button(this.findElement(by));
         btnSelect.click();
         waitReload(5000);
     }

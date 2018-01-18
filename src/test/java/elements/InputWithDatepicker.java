@@ -60,7 +60,7 @@ public class InputWithDatepicker extends AbstractBaseElement {
     }
 
     public void assertDaySelected(int day) {
-        Select daySelected = new Select(wrappedElement.findElement(DAY_SELECT_LOCATOR));
+        Select daySelected = new Select(this.findElement(DAY_SELECT_LOCATOR));
         String dayOption = daySelected.getFirstSelectedOption().getText();
         assertEquals(dayOption, day);
     }

@@ -25,11 +25,11 @@ public class TopMenuItem extends AbstractBaseElement {
     }
 
     public WebElement openAdditionalMenu() {
-        Link linkMenu = new Link(wrappedElement.findElement(new By.ByXPath(LINK_LOCATOR)));
+        Link linkMenu = new Link(this.findElement(new By.ByXPath(LINK_LOCATOR)));
         linkMenu.click();
         By by = new By.ByXPath(ADDITIONAL_MENU_LOCATOR);
         if (isRelativeElementPresent(by))
-            return wrappedElement.findElement(by);
+            return this.findElement(by);
         return null;
 
     }

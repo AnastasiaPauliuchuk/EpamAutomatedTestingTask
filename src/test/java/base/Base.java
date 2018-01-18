@@ -76,12 +76,13 @@ abstract public class Base {
 
 
     public boolean isElementPresent(By by) {
-        List<WebElement> list = Browser.getInstance().getDriver().findElements(by);
+
+        List<WebElement> list = findElements(by);
         return (list.size() > 0);
     }
 
     public boolean isElementVisible(By by) {
-        if (isElementPresent(by)) {
+
             try {
                 Wait<WebDriver> wait =
                         new FluentWait<WebDriver>(Browser.getInstance().getDriver())
@@ -95,8 +96,8 @@ abstract public class Base {
             } catch (Exception e) {
                 return false;
             }
-        }
-        return false;
+
+
     }
 
 

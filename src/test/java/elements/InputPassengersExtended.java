@@ -16,8 +16,11 @@ import java.util.regex.Pattern;
  */
 public class InputPassengersExtended extends BaseContainer {
 
+    /*private static final By CONTAINER_MARKER_LOCATOR =
+            new By.ByXPath("//div[@class=\"passengers\"]/following::div//button[contains(@class,\"close\")]");*/
+
     private static final By CONTAINER_MARKER_LOCATOR =
-            new By.ByXPath("//div[@class=\"passengers\"]/following::div//button[contains(@class,\"close\")]");
+            new By.ByXPath("//div[@class=\"passengers\"]");
     private static final By CONTAINER_LOCATOR = new By.ByXPath(".//div[contains(@class,\"togglepanel-passengers\")]");
     private static final String VALUE_LOCATOR = "parent::div/div";
     private static final String COUNT_ADULT_PERSON_REGEXP = "(\\d+) Adult";
@@ -26,6 +29,10 @@ public class InputPassengersExtended extends BaseContainer {
     private static final String INPUT_TYPE_LOCATOR_TEMPLATE = "//div[contains(@class,\"%s\") and contains(@class,\"selectfield\")]//input[@type=\"text\"]";
     @FindBy(id = "booking-passengers-input")
     private TextBox passengerInput;
+
+    @FindBy(xpath = "//span[contains(@class,\"icon-passenger\")]")
+    private Label iconPassenger;
+
     @FindBy(xpath = "//div[@class=\"passengers\"]/following::div//button[contains(@class,\"close\")]")
     private Button btnSave;
     @FindBy(xpath = "//div[contains(@class,\"selectfield\") and contains(@class,\"adults\")]")
@@ -43,10 +50,10 @@ public class InputPassengersExtended extends BaseContainer {
 
     public void openContainer() {
         passengerInput.click();
-        waitContainerVisibility();
     }
 
     private void waitContainerVisibility() {
+        // cPassengers.isElementVisible();
         isElementVisible(CONTAINER_MARKER_LOCATOR);
     }
 

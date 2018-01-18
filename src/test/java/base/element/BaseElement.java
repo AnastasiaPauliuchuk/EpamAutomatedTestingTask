@@ -57,7 +57,8 @@ public abstract class BaseElement extends Base {
             Wait<WebDriver> wait =
                     new FluentWait<WebDriver>(Browser.getInstance().getDriver())
                             .withTimeout(Long.parseLong(Browser.getInstance().getTimeoutForLoad()), TimeUnit.SECONDS)
-                            .pollingEvery(Long.parseLong(Browser.getInstance().getTimeoutForCondition()), TimeUnit.SECONDS);
+                            .pollingEvery(Long.parseLong(Browser.getInstance().getTimeoutForCondition()), TimeUnit.SECONDS)
+                            .ignoring(NoSuchElementException.class);
 
 
             wait.until(ExpectedConditions.elementToBeClickable(wrappedElement));
@@ -74,7 +75,8 @@ public abstract class BaseElement extends Base {
             Wait<WebDriver> wait =
                     new FluentWait<WebDriver>(Browser.getInstance().getDriver())
                             .withTimeout(Long.parseLong(Browser.getInstance().getTimeoutForLoad()), TimeUnit.SECONDS)
-                            .pollingEvery(Long.parseLong(Browser.getInstance().getTimeoutForCondition()), TimeUnit.SECONDS);
+                            .pollingEvery(Long.parseLong(Browser.getInstance().getTimeoutForCondition()), TimeUnit.SECONDS)
+                            .ignoring(NoSuchElementException.class);
 
 
             wait.until(ExpectedConditions.visibilityOf(wrappedElement));

@@ -19,7 +19,7 @@ public class PlanAndBookAdditionalMenu extends TopAdditionalMenu {
 
 
     public void goAdvancedSearch() {
-        Link linkAdvancedSearch = new Link(wrappedElement.findElement(new By.ByXPath(ADVANCED_SEARCH_LOCATOR)));
+        Link linkAdvancedSearch = new Link(this.findElement(new By.ByXPath(ADVANCED_SEARCH_LOCATOR)));
         linkAdvancedSearch.click();
     }
 }

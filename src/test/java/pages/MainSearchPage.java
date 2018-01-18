@@ -32,7 +32,7 @@ public class MainSearchPage extends BasePage {
     @FindBy(xpath = "//input[@id=\"dateSelection_OutboundDate-datepicker\"]/parent::div")
     private InputWithDatepicker flightDateInput;
 
-    @FindBy(id = "booking-passengers-input")
+    @FindBy(xpath = "//div[@class=\"passengers-input-container\"]")//booking-passengers-input")
     private InputPassengersExtended passengersInput;
 
     @FindBy(xpath = "//section[@data-package=\"search\"]//button[@type=\"submit\"]")
