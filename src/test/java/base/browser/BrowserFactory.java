@@ -42,7 +42,7 @@ public class BrowserFactory {
 
                 ChromeOptions options = new ChromeOptions();
                 options.setExperimentalOption("prefs", chromePrefs);
-                options.addArguments("start-maximized", "disable-popup-blocking", "--incognito");
+                options.addArguments("start-maximized", "--incognito");
                 myTestURL = ClassLoader.getSystemResource("chromedriver.exe");
                 try {
                     myFile = new File(myTestURL.toURI());
